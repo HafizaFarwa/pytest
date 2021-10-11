@@ -52,7 +52,7 @@ def test_multiply_identity():
 def test_multiply_zero():
     assert 0*4==0
 #dry principle: don't repeat yourself
-#that's why we are going to use parameterized function
+#that's why we are going to use parameterized
 
 # --------------------------------------------------------------------------------
 # A parametrized test function
@@ -67,10 +67,6 @@ products = [
     (2.5,6.7,16.75)
 ]
 
-aa= input("Ebter 1 :  ")
-bb= input("Enter b : ")
-cc=1
-cc= aa*bb
 @pytest.mark.parametrize('a,b,product', products)
-def test_multiplication(aa,bb,cc):
-    assert aa*bb==cc
+def test_multiplication(a,b,product):
+    assert a*b==product
