@@ -31,5 +31,46 @@ def test_one_plus_two():
 def test_divide_by_zero():
   with pytest.raises(ZeroDivisionError) as e:
     num = 1 / 0
-    print ("Hellosda")
   assert 'division by zero' in str(e.value)
+
+#multiplication test ideas
+
+#two positive integers
+#identity:multiplication with one
+#zero property
+#positive by negative
+#neative by negative
+#multipying floats
+
+
+def test_multiply_two_postivie_int():
+    assert 2*3==6
+
+def test_multiply_identity():
+    assert 1*28==28
+
+def test_multiply_zero():
+    assert 0*4==0
+#dry principle: don't repeat yourself
+#that's why we are going to use parameterized function
+
+# --------------------------------------------------------------------------------
+# A parametrized test function
+# --------------------------------------------------------------------------------
+
+products = [
+    (2,3,6),
+    (1,22,22),
+    (0,28,0),
+    (3,-4,-12),
+    (-2,-2,4),
+    (2.5,6.7,16.75)
+]
+
+aa= input("Ebter 1 :  ")
+bb= input("Enter b : ")
+cc=1
+cc= aa*bb
+@pytest.mark.parametrize('a,b,product', products)
+def test_multiplication(aa,bb,cc):
+    assert aa*bb==cc
