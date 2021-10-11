@@ -8,7 +8,7 @@ def test_accumulator_init():
 
 def test_accumulator_add_one():
   accum = Accumulator()
-  accum.add(2)
+  accum.add()
   assert accum.count == 1
 
 
